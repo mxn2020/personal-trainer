@@ -1,60 +1,94 @@
-# Personal Trainer Management Platform
+# Personal Trainer Platform
 
-## Pages & Features
+Client management and workout planning for personal trainers.
 
-### 1. Dashboard
-- Today's session schedule
-- Client count & active program stats
-- Revenue this month
-- Upcoming session reminders
+Part of [The Mehdi Verse](https://github.com/mxn2020) — a collection of open-source sample applications.
 
-### 2. Clients
-- Client list with search & status filters (active, inactive, prospect)
-- Client profile: personal info, goals, health conditions, photos
-- Progress tracking (weight, measurements, body fat %)
-- Before / after photo gallery
-- Client notes & logs
+## Tech Stack
 
-### 3. Programs & Workouts
-- Create workout programs (name, duration, goal: strength, weight loss, etc.)
-- Workout builder: exercises, sets, reps, rest, tempo
-- Exercise library with categories & muscle groups
-- Assign program to client
-- Program templates for quick reuse
+- **Frontend**: React 19 + TypeScript + Vite
+- **Backend**: [Shared Convex deployment](https://github.com/mxn2020/the-mehdi-verse-convex-backend)
+- **Auth**: Email/password via `@convex-dev/auth`
 
-### 4. Schedule
-- Calendar view of sessions (day / week / month)
-- Book session with client (time, location, type)
-- Recurring session setup
-- Session reminders (push / email / SMS)
-- Cancel / reschedule with notification
+## Getting Started
 
-### 5. Session Tracking
-- Log completed session: exercises, weights, reps performed
-- Client feedback & RPE (rate of perceived exertion)
-- Session notes
-- Compare actual vs. planned workout
+```bash
+npm install
+cp .env.example .env.local
+# Set VITE_CONVEX_URL to your deployment URL
+npm run dev
+```
 
-### 6. Nutrition
-- Meal plan templates
-- Daily calorie & macro targets per client
-- Food diary review
-- Recipe library
+## License
 
-### 7. Billing & Packages
-- Define packages (single session, 5-pack, monthly unlimited)
-- Track sessions remaining per client
-- Invoice generation
-- Payment history
+MIT © Mehdi Nabhani
 
-### 8. Progress Reports
-- Weight & measurement trend charts
-- Strength progression graphs
-- Client compliance rate
-- Generate PDF progress report for client
+---
 
-### 9. Settings
-- Trainer profile & certifications
-- Working hours & availability
-- Session duration defaults
-- Notification preferences
+<details>
+<summary>📋 Original Feature Spec</summary>
+
+# {{APP_TITLE}}
+
+{{APP_DESCRIPTION}}
+
+Part of [The Mehdi Verse](https://github.com/mxn2020) — a collection of open-source sample applications.
+
+## Tech Stack
+
+- **Frontend**: React 19 + TypeScript + Vite
+- **Backend**: [Shared Convex deployment](https://github.com/mxn2020/the-mehdi-verse-convex-backend)
+- **Auth**: Email/password via `@convex-dev/auth`
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 22+
+- A running [shared Convex backend](https://github.com/mxn2020/the-mehdi-verse-convex-backend)
+
+### Setup
+
+```bash
+# Install dependencies
+npm install
+
+# Create .env.local with your Convex URL
+cp .env.example .env.local
+# Edit .env.local and set VITE_CONVEX_URL to your deployment URL
+
+# Start the dev server
+npm run dev
+```
+
+Open [http://localhost:5173](http://localhost:5173) to view the app.
+
+## Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start Vite dev server |
+| `npm run build` | Build for production |
+| `npm run preview` | Preview production build |
+| `npm run typecheck` | Run TypeScript type checking |
+
+## Project Structure
+
+```
+src/
+  main.tsx              # Entry point with ConvexAuthProvider
+  App.tsx               # Auth routing (Landing vs Dashboard)
+  App.css               # Component styles
+  index.css             # Global styles & design tokens
+  components/
+    Landing.tsx          # Marketing/landing page
+    SignIn.tsx           # Auth form (sign-in/sign-up)
+    Dashboard.tsx        # Authenticated app shell
+api.ts                   # Convex API types (from shared backend)
+```
+
+## License
+
+MIT © Mehdi Nabhani
+
+</details>
